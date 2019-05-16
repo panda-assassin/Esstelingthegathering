@@ -4,4 +4,7 @@
     <string name="don_t_have_an_account_yet">Don\'t have an account yet? \n Register now!</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="activity_login"></string>
+    <string name="activity_register"></string>
 </resources>
