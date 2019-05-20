@@ -8,11 +8,12 @@ import android.widget.Button;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button btn = findViewById(R.id.RegisterButton);
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Button btn = findViewById(R.id.RegisterButton);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
