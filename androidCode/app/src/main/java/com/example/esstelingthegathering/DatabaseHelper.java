@@ -1,5 +1,6 @@
 package com.example.esstelingthegathering;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,9 +17,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static String DB_NAME = "userdb.db";
     private static String DB_PATH = "";
+    private static final String id = "ID";
+    private static final String username = "Username";
+    private static final String password = "Password";
+    private static final String email = "Email";
     private static final int DB_VERSION = 1;
 
-    private SQLiteDatabase mDataBase;
+    private SQLiteDatabase DB;
     private final Context mContext;
     private boolean mNeedUpdate = false;
 
@@ -78,14 +83,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean openDataBase() throws SQLException {
-        mDataBase = SQLiteDatabase.openDatabase(DB_PATH + DB_NAME, null, SQLiteDatabase.CREATE_IF_NECESSARY);
-        return mDataBase != null;
+        DB = SQLiteDatabase.openDatabase(DB_PATH + DB_NAME, null, SQLiteDatabase.CREATE_IF_NECESSARY);
+        return DB != null;
+    }
+
+    public boolean addUser(String username, String password, String email) {
+        ContentValues user = new ContentValues();
+        user.put(this.username, username);
+        user.put(this.password, password);
+        user.put(this.email, email);
+        long result = DB.insert(this.DB_NAME, null, user);
+
+        if (result == -1) {
+            return false;
+        } else {
+
+            return true;
+        }
     }
 
     @Override
     public synchronized void close() {
-        if (mDataBase != null)
-            mDataBase.close();
+        if (DB != null)
+            DB.close();
         super.close();
     }
 
