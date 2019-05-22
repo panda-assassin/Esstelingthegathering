@@ -1,4 +1,4 @@
-package com.example.esstelingthegathering;
+package com.example.androidcode;
 
 import android.content.Intent;
 import android.database.SQLException;
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         DBHelper = new DatabaseHelper(this);
 
-        Button btn = (Button)findViewById(R.id.RegisterButton);
+        //Button btn = (Button)findViewById(R.id.RegisterButton);
         try {
             DBHelper.updateDataBase();
         } catch(IOException e) {
@@ -36,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         DBHelper.openDataBase();
+        Button btn = findViewById(R.id.RegisterButton);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.esstelingthegathering;
+package com.example.androidcode;
 
 import android.content.ContentValues;
 import android.content.Context;
