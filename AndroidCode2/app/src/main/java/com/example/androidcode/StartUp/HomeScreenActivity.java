@@ -22,7 +22,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         Button checkin = findViewById(R.id.CheckInActivityBttn);
         Button inventory = findViewById(R.id.InventoryActivityBttn);
-        Button achievement = findViewById(R.id.achievementButton);
+        Button achievement = findViewById(R.id.achievementActivityBttn);
         Button game = findViewById(R.id.GameActivityBttn);
 
         checkin.setOnClickListener(new View.OnClickListener() {

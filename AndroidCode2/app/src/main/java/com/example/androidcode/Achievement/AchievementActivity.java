@@ -10,7 +10,7 @@ import android.widget.Button;
 
 import com.example.androidcode.BlankActivity;
 import com.example.androidcode.R;
-import com.example.androidcode.StartUp.MainActivity;
+import com.example.androidcode.StartUp.HomeScreenActivity;
 
 public class AchievementActivity extends AppCompatActivity {
 
@@ -36,7 +36,7 @@ public class AchievementActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AchievementActivity.this, MainActivity.class));
+                startActivity(new Intent(AchievementActivity.this, HomeScreenActivity.class));
             }
         });
 
