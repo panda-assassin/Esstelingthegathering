@@ -35,11 +35,12 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(findViewById(R.id.registerPassword).equals(findViewById(R.id.repeatRegisteredPassword))){
-
-                }else{
-                    
-                }
+//                if(findViewById(R.id.registerPassword).equals(findViewById(R.id.repeatRegisteredPassword))){
+//                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+//                }else{
+//                    //startActivity(new Intent(RegisterActivity.this, ));
+//                }
+                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
             }
         });
     }

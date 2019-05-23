@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         DBHelper = new DatabaseHelper(this);
 
-        //Button btn = (Button)findViewById(R.id.RegisterButton);
         try {
             DBHelper.updateDataBase();
         } catch(IOException e) {
@@ -40,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(i);
+                startActivity(new Intent(MainActivity.this,RegisterActivity.class));
             }
         });
     }
