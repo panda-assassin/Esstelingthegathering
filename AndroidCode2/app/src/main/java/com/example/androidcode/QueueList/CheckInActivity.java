@@ -1,4 +1,4 @@
-package com.example.androidcode;
+package com.example.androidcode.QueueList;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.androidcode.BlankActivity;
+import com.example.androidcode.StartUp.MainActivity;
+import com.example.androidcode.R;
 
 public class CheckInActivity extends AppCompatActivity {
 

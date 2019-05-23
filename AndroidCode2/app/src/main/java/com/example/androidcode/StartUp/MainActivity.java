@@ -1,4 +1,4 @@
-package com.example.androidcode;
+package com.example.androidcode.StartUp;
 
 import android.content.Intent;
 import android.database.SQLException;
@@ -7,6 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.androidcode.DatabaseHelper;
+import com.example.androidcode.QueueList.CheckInActivity;
+import com.example.androidcode.R;
 
 import java.io.IOException;
 

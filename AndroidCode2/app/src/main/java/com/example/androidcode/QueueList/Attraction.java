@@ -1,4 +1,4 @@
-package com.example.androidcode;
+package com.example.androidcode.QueueList;
 
 public class Attraction {
 

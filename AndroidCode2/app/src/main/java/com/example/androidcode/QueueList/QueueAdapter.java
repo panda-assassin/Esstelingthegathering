@@ -1,6 +1,5 @@
-package com.example.androidcode;
+package com.example.androidcode.QueueList;
 
-import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.example.androidcode.R;
 
 public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHolder> {
 
