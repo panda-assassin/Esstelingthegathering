@@ -1,10 +1,12 @@
-package com.example.androidcode;
+package com.example.androidcode.DataBase;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.example.androidcode.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
