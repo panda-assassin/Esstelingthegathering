@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".QueueList.CheckInActivity" />
         <activity android:name=".StartUp.HomeScreenActivity" />
+        <activity android:name=".Achievement.AchievementActivity" />
     </application>
 
 </manifest>

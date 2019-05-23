@@ -10,7 +10,6 @@ import android.widget.Button;
 
 import com.example.androidcode.BlankActivity;
 import com.example.androidcode.StartUp.HomeScreenActivity;
-import com.example.androidcode.StartUp.MainActivity;
 import com.example.androidcode.R;
 
 public class CheckInActivity extends AppCompatActivity {

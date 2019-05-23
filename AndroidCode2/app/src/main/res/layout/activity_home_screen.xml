@@ -17,12 +17,12 @@
         app:layout_constraintStart_toStartOf="@+id/guideline5" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/achievementButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="60dp"
-        android:text="Button"
+        android:layout_marginEnd="32dp"
+        android:text="achievements"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline6" />
 

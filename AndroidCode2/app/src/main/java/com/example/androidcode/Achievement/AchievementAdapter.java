@@ -19,7 +19,6 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
     public AchievementAdapter() {
     }
 
-    @NonNull
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_achievements, viewGroup, false);
@@ -53,6 +52,7 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
         public ImageViewHolder(View itemview) {
             super(itemview);
 
+            cardView = itemview.findViewById(R.id.achievementCardView);
             image = itemview.findViewById(R.id.achievementImage);
             name = itemview.findViewById(R.id.achievementName);
             progress = itemview.findViewById(R.id.progress);

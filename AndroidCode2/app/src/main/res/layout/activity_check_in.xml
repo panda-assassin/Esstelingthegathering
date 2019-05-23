@@ -36,7 +36,7 @@
     app:layout_constraintStart_toStartOf="parent"
     android:background="@android:color/holo_green_light"/>
 
-    <android.support.v7.widget.RecyclerView
+    <RecyclerView
         android:id="@+id/queue_recycler"
         android:layout_width="0dp"
         android:layout_height="468dp"

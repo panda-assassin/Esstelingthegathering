@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.androidcode.Achievement.Achievement;
+import com.example.androidcode.Achievement.AchievementActivity;
 import com.example.androidcode.Game.GameSetupActivity;
 import com.example.androidcode.Inventory.InventoryActivity;
 import com.example.androidcode.QueueList.CheckInActivity;
@@ -20,7 +22,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         Button checkin = findViewById(R.id.CheckInActivityBttn);
         Button inventory = findViewById(R.id.InventoryActivityBttn);
-        Button nothing1= findViewById(R.id.button3);
+        Button achievement = findViewById(R.id.achievementButton);
         Button game = findViewById(R.id.GameActivityBttn);
 
         checkin.setOnClickListener(new View.OnClickListener() {
@@ -43,5 +45,14 @@ public class HomeScreenActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeScreenActivity.this, GameSetupActivity.class));
             }
         });
+
+        achievement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeScreenActivity.this, AchievementActivity.class));
+            }
+        });
+
     }
+
 }
