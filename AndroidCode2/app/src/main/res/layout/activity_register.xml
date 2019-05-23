@@ -14,7 +14,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-medium"
-        android:text="register"
+        android:text="REGISTER"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="36sp"

@@ -41,7 +41,6 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHol
         return 5;
     }
 
-
     public class ImageViewHolder extends RecyclerView.ViewHolder {
 
         CardView cardView;
