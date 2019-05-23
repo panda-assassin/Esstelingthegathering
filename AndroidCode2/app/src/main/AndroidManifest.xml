@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Inventory.InventoryActivity"></activity>
+        <activity android:name=".Inventory.InventoryActivity" />
         <activity android:name=".BlankActivity" />
         <activity android:name=".StartUp.RegisterActivity" />
         <activity android:name=".StartUp.MainActivity">
@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".QueueList.CheckInActivity" />
+        <activity android:name=".StartUp.HomeScreenActivity"></activity>
     </application>
 
 </manifest>

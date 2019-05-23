@@ -1,13 +1,16 @@
 package com.example.androidcode.QueueList;
 
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.androidcode.BlankActivity;
 import com.example.androidcode.R;
 
 public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHolder> {
@@ -44,7 +47,8 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHol
         CardView cardView;
         TextView name;
         TextView exp;
-        ImageView  image;
+        ImageView image;
+        Button checkin;
 
 
         public ImageViewHolder(View itemview) {
@@ -54,6 +58,14 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHol
             cardView = itemview.findViewById(R.id.cardview);
             name = itemview.findViewById(R.id.attractionname);
             exp = itemview.findViewById(R.id.queueExp);
+            checkin = itemview.findViewById(R.id.Checkin);
+
+            checkin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    v.getContext().startActivity(new Intent(v.getContext(), BlankActivity.class));
+                }
+            });
         }
     }
 }

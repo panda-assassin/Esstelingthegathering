@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.androidcode.DatabaseHelper;
+import com.example.androidcode.DataBase.DatabaseHelper;
 import com.example.androidcode.QueueList.CheckInActivity;
 import com.example.androidcode.R;
 
@@ -42,13 +42,14 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CheckInActivity.class));
+                Intent i = new Intent(MainActivity.this, HomeScreenActivity.class);
+                startActivity(i);
             }
         });
 
         DBHelper.openDataBase();
-        Button btn = findViewById(R.id.RegisterButton);
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button registerButton = findViewById(R.id.RegisterButton);
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, RegisterActivity.class);
