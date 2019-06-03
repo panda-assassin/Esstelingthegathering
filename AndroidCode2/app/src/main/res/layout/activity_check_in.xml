@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".QueueList.CheckInActivity">
 
+    <android.support.v7.widget.RecyclerView
+    android:id="@+id/queue_recycler"
+        android:layout_width="0dp"
+        android:layout_height="468dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/view4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
     <View
         android:id="@+id/view"
         android:layout_width="411dp"
@@ -36,17 +47,6 @@
     app:layout_constraintStart_toStartOf="parent"
     android:background="@android:color/holo_green_light"/>
 
-    <RecyclerView
-        android:id="@+id/queue_recycler"
-        android:layout_width="0dp"
-        android:layout_height="468dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/view4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
-
     <Button
         android:id="@+id/backbttn"
         android:layout_width="wrap_content"
@@ -65,4 +65,5 @@
         android:text="options"
         app:layout_constraintStart_toEndOf="@+id/backbttn"
         app:layout_constraintTop_toTopOf="@+id/backbttn" />
+
 </android.support.constraint.ConstraintLayout>

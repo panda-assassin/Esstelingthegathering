@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.androidcode.Achievement.Achievement;
 import com.example.androidcode.Achievement.AchievementActivity;
@@ -20,17 +21,22 @@ public class HomeScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-        Button checkin = findViewById(R.id.CheckInActivityBttn);
-        Button inventory = findViewById(R.id.InventoryActivityBttn);
-        Button achievement = findViewById(R.id.achievementActivityBttn);
-        Button game = findViewById(R.id.GameActivityBttn);
+        ImageButton checkin = findViewById(R.id.CheckInActivityBttn);
+        ImageButton inventory = findViewById(R.id.InventoryActivityBttn);
+        ImageButton achievement = findViewById(R.id.achievementActivityBttn);
+        ImageButton game = findViewById(R.id.GameActivityBttn);
 
-        checkin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeScreenActivity.this, CheckInActivity.class));
-            }
-        });
+
+        try {
+            checkin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(HomeScreenActivity.this, CheckInActivity.class));
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         inventory.setOnClickListener(new View.OnClickListener() {
             @Override
