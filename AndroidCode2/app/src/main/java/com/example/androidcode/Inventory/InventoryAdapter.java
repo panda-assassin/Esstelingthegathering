@@ -38,7 +38,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.Imag
 
     @Override
     public int getItemCount() {
-        return 8;
+        return 50;
     }
 
 
