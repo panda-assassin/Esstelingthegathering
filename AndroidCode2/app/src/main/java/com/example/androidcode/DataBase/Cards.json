@@ -1,0 +1,76 @@
+{
+  "Title":  "Cards Essteling",
+  "Type": "CardSet",
+  "Author": "Mark Baaij",
+  "Version": "1.1",
+  "cards":
+  [
+    {
+      "Name":     "Roodkapje",
+      "CardType":     "Paper",
+      "Description": "Loopt door het bos naar haar oma, maar word vervolgens bruut doodgemaakt door een wolf. ",
+      "ImagePath": ""
+    },
+
+    {
+      "Name":     "Wolf",
+      "CardType":     "Siccors",
+      "Description": "Gewoon een wild dier die honger had en zin had in een meisje met koekjes als bijgerecht",
+      "ImagePath": ""
+    },
+
+    {
+      "Name":     "Jager",
+      "CardType":     "Rock",
+      "Description": "Vermoord de wolf en snijd zijn buik open, treft hier 2 levende dames aan, gooit ze vervolgens beide op de brandstapel, want als dat geen heksen zijn, weet ik t ook niet meer",
+      "ImagePath": ""
+    },
+
+    {
+      "Name":     "Joris",
+      "CardType":     "Rock",
+      "Description": "Een kerel die denkt met alleen een zwaard een draak te kunnen doden. Niet de slimste van de klas",
+      "ImagePath": ""
+    },
+
+    {
+      "Name":     "en de",
+      "CardType":     "Paper",
+      "Description": "Niet zo zeer een persoon, maar toch wel 2 van de meest gebruikte woorden in  de nederlandse taal"
+    },
+
+    {
+      "Name":     "Draak",
+      "CardType":     "Siccors",
+      "Description": "Machtig dier die vlammen kan spuwen en schubben sterker dan staal als huid heeft. Word uiteindelijk verslagen door een tiener met een zwaard... hoe dan?!",
+      "ImagePath": ""
+    },
+
+    {
+      "Name":     "Lavictus",
+      "CardType":     "Joker",
+      "Description": "The man, the Legend!!!",
+      "ImagePath": ""
+    }
+
+
+
+
+  ]
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
