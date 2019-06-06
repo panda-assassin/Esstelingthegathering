@@ -16,7 +16,6 @@ import com.example.androidcode.R;
 public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHolder> {
 
     public QueueAdapter() {
-
     }
 
     @Override
@@ -47,7 +46,6 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHol
         TextView name;
         TextView exp;
         ImageView image;
-        Button checkin;
 
 
         public ImageViewHolder(View itemview) {
@@ -57,14 +55,7 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHol
             cardView = itemview.findViewById(R.id.cardview);
             name = itemview.findViewById(R.id.attractionname);
             exp = itemview.findViewById(R.id.queueExp);
-            checkin = itemview.findViewById(R.id.Checkin);
 
-            checkin.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    v.getContext().startActivity(new Intent(v.getContext(), BlankActivity.class));
-                }
-            });
         }
     }
 }

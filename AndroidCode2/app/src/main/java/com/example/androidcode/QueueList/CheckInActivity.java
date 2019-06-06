@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.method.CharacterPickerDialog;
 import android.view.View;
 import android.widget.Button;
 
@@ -24,6 +25,8 @@ public class CheckInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_in);
 
+        Button scanQr = findViewById(R.id.qrCodeActivityBttn);
+
         recyclerView = findViewById(R.id.queue_recycler);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.hasFixedSize();
@@ -34,6 +37,14 @@ public class CheckInActivity extends AppCompatActivity {
 
         Button back = findViewById(R.id.backbttn);
         Button option = findViewById(R.id.optionsbttn);
+
+
+        scanQr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //open QR scanner
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
