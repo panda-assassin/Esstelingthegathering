@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.example.androidcode.DataBase.Database;
 import com.example.androidcode.DataBase.DatabaseHelper;
-import com.example.androidcode.DataBase.InputValidation;
 import com.example.androidcode.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(registerIntent);
             }
         });
+
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

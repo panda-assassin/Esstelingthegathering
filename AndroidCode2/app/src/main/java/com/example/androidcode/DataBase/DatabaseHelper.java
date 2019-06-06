@@ -10,10 +10,10 @@ import com.example.androidcode.Model.User;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     // Database Name
-    private static final String DATABASE_NAME = "userdb.db";
+    private static final String DATABASE_NAME = "Databases/users.db";
 
     // User table name
-    private static final String TABLE_NAME = "users";
+    private static final String TABLE_NAME = "userTable";
 
     // User Table Columns names
     private static final String COLUMN_USER_ID = "ID";
@@ -22,7 +22,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_USER_PASSWORD = "password";
 
     // create table sql query
-    private String CREATE_USER_TABLE = "CREATE TABLE registeruser (ID INTEGER PRIMARY KEY AUTOINCREMENT,email TEXT,username TEXT, password TEXT )";
+    private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_NAME + "("
+            + COLUMN_USER_ID + "INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
+            + COLUMN_USER_EMAIL + " TEXT," + COLUMN_USER_PASSWORD + " TEXT" + ")";
 
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
@@ -49,11 +51,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void addUser(String user, String password, String email) {
+    public void addUser(String username, String password, String email) {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(COLUMN_USER_NAME, user);
+        values.put(COLUMN_USER_NAME, username);
         values.put(COLUMN_USER_EMAIL, email);
         values.put(COLUMN_USER_PASSWORD, password);
 
@@ -62,34 +64,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void updateUser(User user) {
-        SQLiteDatabase db = getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_USER_NAME, user.getName());
-        values.put(COLUMN_USER_EMAIL, user.getEmail());
-        values.put(COLUMN_USER_PASSWORD, user.getPassword());
-
-        // updating row
-        db.update(TABLE_NAME, values, COLUMN_USER_ID + " = ?",
-                new String[]{String.valueOf(user.getId())});
-        db.close();
-    }
-
-    public void deleteUser(User user) {
-        SQLiteDatabase db = getWritableDatabase();
-        // delete user record by id
-        db.delete(TABLE_NAME, COLUMN_USER_ID + " = ?",
-                new String[]{String.valueOf(user.getId())});
-        db.close();
-    }
+//    public void updateUser(User user) {
+//        SQLiteDatabase db = getWritableDatabase();
+//
+//        ContentValues values = new ContentValues();
+//        values.put(COLUMN_USER_NAME, user.getName());
+//        values.put(COLUMN_USER_EMAIL, user.getEmail());
+//        values.put(COLUMN_USER_PASSWORD, user.getPassword());
+//
+//        // updating row
+//        db.update(TABLE_NAME, values, COLUMN_USER_ID + " = ?",
+//                new String[]{String.valueOf(user.getId())});
+//        db.close();
+//    }
+//
+//    public void deleteUser(User user) {
+//        SQLiteDatabase db = getWritableDatabase();
+//        // delete user record by id
+//        db.delete(TABLE_NAME, COLUMN_USER_ID + " = ?",
+//                new String[]{String.valueOf(user.getId())});
+//        db.close();
+//    }
 
     public boolean checkUser(String username) {
+
         // array of columns to fetch
         String[] columns = {
                 COLUMN_USER_ID
         };
-        SQLiteDatabase db = getReadableDatabase();
+        SQLiteDatabase db = getWritableDatabase();
         // selection criteria
         String selection = COLUMN_USER_NAME + " = ?";
 
@@ -110,11 +113,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
 
-        if (cursorCount > 0) {
+        if (cursorCount > 1) {
             return true;
         }
 
         return false;
+    }
     }
 
     public boolean checkUser(String username, String password) {
@@ -123,7 +127,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {
                 COLUMN_USER_ID
         };
-        SQLiteDatabase db = getReadableDatabase();
+        SQLiteDatabase db = getWritableDatabase();
         // selection criteria
         String selection = COLUMN_USER_NAME + " = ?" + " and " + COLUMN_USER_PASSWORD + " = ?";
 
@@ -144,7 +148,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
 
-        if (cursorCount > 0) {
+        if (cursorCount > 1) {
             return true;
         }
 
