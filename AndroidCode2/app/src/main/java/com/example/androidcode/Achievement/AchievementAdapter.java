@@ -29,7 +29,7 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
 
         viewHolder.name.setText("naam van achievement");
         viewHolder.progress.setText("hoeveel van hoeveel");
-        viewHolder.image.setImageResource(R.drawable.ic_launcher_foreground);
+        viewHolder.image.setImageResource(R.drawable.ic_launcher_background);
     }
 
     @Override
