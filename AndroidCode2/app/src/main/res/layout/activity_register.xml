@@ -6,45 +6,6 @@
     android:layout_height="match_parent"
     android:background="@android:color/background_light">
 
-    <Button
-        android:id="@+id/backToLoginBttn"
-        android:layout_width="152dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/holo_blue_dark"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/log_in"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repeatRegisteredPassword"
-        app:layout_constraintVertical_bias="0.535" />
-
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="152dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/holo_blue_dark"
-        android:fontFamily="sans-serif-medium"
-        android:text="register"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repeatRegisteredPassword"
-        app:layout_constraintVertical_bias="0.19" />
-
     <TextView
         android:id="@+id/RegisterTitle"
         android:layout_width="wrap_content"
@@ -55,7 +16,7 @@
         android:fontFamily="sans-serif-medium"
         android:text="@string/register"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,4 +90,22 @@
         app:layout_constraintStart_toStartOf="@+id/registerPassword"
         app:layout_constraintTop_toBottomOf="@+id/registerPassword" />
 
+    <Button
+        android:id="@+id/registerConfirm"
+        android:layout_width="152dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/holo_blue_dark"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/register"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerRepeatPassword"
+        app:layout_constraintVertical_bias="0.19" />
 </android.support.constraint.ConstraintLayout>

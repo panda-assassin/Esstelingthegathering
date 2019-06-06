@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.androidcode">
 
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,15 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Game.PopUpActivity"></activity>
-        <activity android:name=".Game.GameActivity"
-                    android:screenOrientation="landscape"/>
-        <activity
-            android:name=".Game.GameSetupActivity"
-            android:screenOrientation="landscape" />
+        <activity android:name=".Game.GameSetupActivity" android:screenOrientation="landscape"></activity>
         <activity android:name=".Inventory.InventoryActivity" />
         <activity android:name=".BlankActivity" />
-        <activity android:name=".StartUp.RegisterActivity"/>
+        <activity android:name=".StartUp.RegisterActivity" />
         <activity android:name=".StartUp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,12 +22,7 @@
         </activity>
         <activity android:name=".QueueList.CheckInActivity" />
         <activity android:name=".StartUp.HomeScreenActivity" />
-        <activity android:name=".QrScanner.QrScannerActivity"/>
         <activity android:name=".Achievement.AchievementActivity" />
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

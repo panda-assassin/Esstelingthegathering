@@ -8,7 +8,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -58,8 +57,8 @@ public class InventoryActivity extends AppCompatActivity implements inventoryLis
         adapter = new InventoryAdapter(dataSet, this);
         recyclerView.setAdapter(adapter);
 
-        ImageButton back = findViewById(R.id.backbttn);
-        ImageButton option = findViewById(R.id.optionsbttn);
+        Button back = findViewById(R.id.backbttn);
+        Button option = findViewById(R.id.optionsbttn);
 
 
 

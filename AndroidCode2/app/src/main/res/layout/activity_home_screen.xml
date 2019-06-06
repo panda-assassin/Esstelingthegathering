@@ -71,44 +71,5 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.53" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="check in"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/CheckInActivityBttn"
-        app:layout_constraintStart_toStartOf="@+id/CheckInActivityBttn"
-        app:layout_constraintTop_toBottomOf="@+id/CheckInActivityBttn" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="achievements"
-        app:layout_constraintEnd_toEndOf="@+id/achievementActivityBttn"
-        app:layout_constraintStart_toStartOf="@+id/achievementActivityBttn"
-        app:layout_constraintTop_toBottomOf="@+id/achievementActivityBttn" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="inventory"
-        app:layout_constraintEnd_toEndOf="@+id/InventoryActivityBttn"
-        app:layout_constraintStart_toStartOf="@+id/InventoryActivityBttn"
-        app:layout_constraintTop_toBottomOf="@+id/InventoryActivityBttn" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="play game!"
-        app:layout_constraintEnd_toEndOf="@+id/GameActivityBttn"
-        app:layout_constraintStart_toStartOf="@+id/GameActivityBttn"
-        app:layout_constraintTop_toBottomOf="@+id/GameActivityBttn" />
-
 
 </android.support.constraint.ConstraintLayout>

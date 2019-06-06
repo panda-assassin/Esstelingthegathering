@@ -37,8 +37,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
             public void onClick(View view) {
                 String email = emailaddress.getText().toString().trim();
                 String user = username.getText().toString().trim();
