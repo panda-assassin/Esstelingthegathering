@@ -26,30 +26,11 @@
         android:id="@+id/view4"
         android:layout_width="0dp"
         android:layout_height="69dp"
-        android:background="@android:color/holo_green_light"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/backbttn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="16dp"
-        android:text="back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/view4" />
-
-    <Button
-        android:id="@+id/optionsbttn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:text="options"
-        app:layout_constraintStart_toEndOf="@+id/backbttn"
-        app:layout_constraintTop_toTopOf="@+id/backbttn" />
 
     <View
         android:id="@+id/view2"
@@ -66,7 +47,7 @@
         android:layout_width="0dp"
         android:layout_height="10dp"
         android:layout_marginTop="8dp"
-        android:background="#5AFA95"
+        android:background="@color/colorPrimaryDark"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +85,7 @@
         app:layout_constraintEnd_toEndOf="@+id/view2"
         app:layout_constraintTop_toBottomOf="@+id/divider"
         app:layout_constraintVertical_bias="0.512"
-        app:srcCompat="@color/colorAccent" />
+        app:srcCompat="@color/huts2" />
 
     <ImageView
         android:id="@+id/selectedCardTypeImage"
@@ -114,6 +95,27 @@
         android:layout_marginEnd="100dp"
         app:layout_constraintEnd_toEndOf="@+id/selectedCardImage"
         app:layout_constraintTop_toTopOf="@+id/selectedCardImage"
-        app:srcCompat="@color/colorPrimary" />
+        app:srcCompat="@color/huts" />
+
+    <ImageButton
+        android:id="@+id/optionsbttn"
+        android:layout_width="59dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="296dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/backbttn"
+        app:layout_constraintTop_toTopOf="@+id/backbttn"
+        app:srcCompat="@drawable/optionsicon" />
+
+    <ImageButton
+        android:id="@+id/backbttn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:srcCompat="@drawable/backicon" />
 
 </android.support.constraint.ConstraintLayout>
