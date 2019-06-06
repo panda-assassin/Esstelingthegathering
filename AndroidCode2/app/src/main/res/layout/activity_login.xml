@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_light">
@@ -52,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/LoginUsername" />
 
     <Button
-        android:id="@+id/LogInButton"
+        android:id="@+id/LoginButton"
         android:layout_width="169dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -84,7 +85,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LogInButton"
+        app:layout_constraintTop_toBottomOf="@+id/LoginButton"
         app:layout_constraintVertical_bias="0.060000002" />
 
     <Button
@@ -96,9 +97,9 @@
         android:text="@string/register"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/LogInButton"
+        app:layout_constraintEnd_toEndOf="@+id/LoginButton"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/LogInButton"
+        app:layout_constraintStart_toStartOf="@+id/LoginButton"
         app:layout_constraintTop_toBottomOf="@+id/RegisterInstructionText"
         app:layout_constraintVertical_bias="0.100000024" />
 
