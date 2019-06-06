@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.androidcode.BlankActivity;
+import com.example.androidcode.QrScanner.QrScannerActivity;
 import com.example.androidcode.R;
 
 public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHolder> {
@@ -56,6 +57,12 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHol
             name = itemview.findViewById(R.id.attractionname);
             exp = itemview.findViewById(R.id.queueExp);
 
+            checkin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    v.getContext().startActivity(new Intent(v.getContext(), QrScannerActivity.class));
+                }
+            });
         }
     }
 }
