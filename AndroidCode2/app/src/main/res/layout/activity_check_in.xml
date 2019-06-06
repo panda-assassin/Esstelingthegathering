@@ -7,12 +7,12 @@
     tools:context=".QueueList.CheckInActivity">
 
     <android.support.v7.widget.RecyclerView
-    android:id="@+id/queue_recycler"
+        android:id="@+id/queue_recycler"
         android:layout_width="0dp"
-        android:layout_height="468dp"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/view4"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/qrCodeActivityBttn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -38,14 +38,14 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <View
-    android:id="@+id/view4"
-    android:layout_width="0dp"
-    android:layout_height="74dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="1.0"
-    app:layout_constraintStart_toStartOf="parent"
-    android:background="@android:color/holo_green_light"/>
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="74dp"
+        android:background="@android:color/holo_green_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/backbttn"
@@ -65,5 +65,16 @@
         android:text="options"
         app:layout_constraintStart_toEndOf="@+id/backbttn"
         app:layout_constraintTop_toTopOf="@+id/backbttn" />
+
+    <Button
+        android:id="@+id/qrCodeActivityBttn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/view4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
