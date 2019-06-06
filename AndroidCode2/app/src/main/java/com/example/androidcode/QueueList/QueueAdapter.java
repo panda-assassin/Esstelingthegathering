@@ -55,7 +55,6 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHol
             cardView = itemview.findViewById(R.id.cardview);
             name = itemview.findViewById(R.id.attractionname);
             exp = itemview.findViewById(R.id.queueExp);
-
         }
     }
 }
