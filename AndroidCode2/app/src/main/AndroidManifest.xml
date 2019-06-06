@@ -12,10 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Game.GameSetupActivity" android:screenOrientation="landscape"></activity>
+        <activity android:name=".Game.PopUpActivity"></activity>
+        <activity android:name=".Game.GameActivity"
+                    android:screenOrientation="landscape"/>
+        <activity
+            android:name=".Game.GameSetupActivity"
+            android:screenOrientation="landscape" />
         <activity android:name=".Inventory.InventoryActivity" />
         <activity android:name=".BlankActivity" />
-        <activity android:name=".StartUp.RegisterActivity" />
+        <activity android:name=".StartUp.RegisterActivity"/>
         <activity android:name=".StartUp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
