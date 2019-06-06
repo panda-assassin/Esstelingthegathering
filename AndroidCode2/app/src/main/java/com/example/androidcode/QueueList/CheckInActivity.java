@@ -38,8 +38,8 @@ public class CheckInActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
-        Button back = findViewById(R.id.backbttn);
-        Button option = findViewById(R.id.optionsbttn);
+        ImageButton back = findViewById(R.id.backbttn);
+        ImageButton option = findViewById(R.id.optionsbttn);
         Button scan = findViewById(R.id.qrCodeActivityBttn);
 
 
