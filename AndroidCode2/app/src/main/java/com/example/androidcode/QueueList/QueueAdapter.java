@@ -56,13 +56,6 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHol
             cardView = itemview.findViewById(R.id.cardview);
             name = itemview.findViewById(R.id.attractionname);
             exp = itemview.findViewById(R.id.queueExp);
-
-            checkin.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    v.getContext().startActivity(new Intent(v.getContext(), QrScannerActivity.class));
-                }
-            });
         }
     }
 }
