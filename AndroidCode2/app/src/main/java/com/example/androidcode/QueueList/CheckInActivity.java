@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.androidcode.BlankActivity;
+import com.example.androidcode.QrScanner.QrScannerActivity;
 import com.example.androidcode.StartUp.HomeScreenActivity;
 import com.example.androidcode.R;
 
@@ -37,8 +38,9 @@ public class CheckInActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
-        ImageButton back = findViewById(R.id.backbttn);
-        ImageButton option = findViewById(R.id.optionsbttn);
+        Button back = findViewById(R.id.backbttn);
+        Button option = findViewById(R.id.optionsbttn);
+        Button scan = findViewById(R.id.qrCodeActivityBttn);
 
 
         scanQr.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +64,14 @@ public class CheckInActivity extends AppCompatActivity {
             }
         });
 
+        scan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CheckInActivity.this, QrScannerActivity.class));
 
+
+            }
+        });
     }
 }
+
