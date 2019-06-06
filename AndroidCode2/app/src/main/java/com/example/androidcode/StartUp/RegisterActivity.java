@@ -10,13 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.androidcode.DataBase.Database;
 import com.example.androidcode.DataBase.DatabaseHelper;
 import com.example.androidcode.R;
 
 import java.io.IOException;
 
 public class RegisterActivity extends AppCompatActivity {
-    DatabaseHelper db;
+    Database db;
     EditText emailaddress;
     EditText username;
     EditText password;
@@ -28,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        db = new DatabaseHelper(this);
+        db = new Database(this);
         emailaddress = (EditText) findViewById(R.id.registerEmail);
         username = (EditText) findViewById(R.id.registerUsername);
         password = (EditText) findViewById(R.id.registerPassword);

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.androidcode.DataBase.Database;
 import com.example.androidcode.DataBase.DatabaseHelper;
 import com.example.androidcode.DataBase.InputValidation;
 import com.example.androidcode.R;
@@ -18,14 +19,14 @@ public class MainActivity extends AppCompatActivity {
     private EditText password;
     private Button loginButton;
     private Button registerButton;
-    private DatabaseHelper db;
+    private Database db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        db = new DatabaseHelper(this);
+        db = new Database(this);
         username = (EditText)findViewById(R.id.loginUsername);
         password = (EditText)findViewById(R.id.loginPassword);
         loginButton = (Button)findViewById(R.id.logInButton);
