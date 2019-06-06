@@ -10,6 +10,8 @@
         android:id="@+id/card_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:cropToPadding="true"
+        android:background="@android:color/darker_gray"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <TextView

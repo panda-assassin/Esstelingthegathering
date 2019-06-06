@@ -1,5 +1,6 @@
 package com.example.androidcode.Inventory;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,10 +13,16 @@ import android.widget.TextView;
 import com.example.androidcode.QueueList.QueueAdapter;
 import com.example.androidcode.R;
 
+import java.util.ArrayList;
+
 public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.ImageViewHolder> {
 
-    public InventoryAdapter() {
+    private ArrayList<Card> cards;
+    private inventoryListener listener;
 
+    public InventoryAdapter(ArrayList<Card> cards, inventoryListener listener) {
+        this.cards = cards;
+        this.listener = listener;
     }
 
     @Override
@@ -28,17 +35,18 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.Imag
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ImageViewHolder viewHolder, int i) {
+    public void onBindViewHolder(final ImageViewHolder viewHolder, int i) {
 
+//        viewHolder.cardImage.setImageResource(cards.get(i).getImage);
         viewHolder.cardImage.setImageResource(R.drawable.ic_launcher_background);
-        viewHolder.cardName.setText("Naam");
-
+        viewHolder.cardName.setText(cards.get(i).getName());
+        viewHolder.card = cards.get(i);
 
     }
 
     @Override
     public int getItemCount() {
-        return 50;
+        return cards.size();
     }
 
 
@@ -46,14 +54,23 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.Imag
 
         ImageView cardImage;
         TextView cardName;
+        Card card;
 
-
-        public ImageViewHolder(View itemview) {
+        public ImageViewHolder(final View itemview) {
             super (itemview);
 
             cardImage = itemview.findViewById(R.id.card_image);
             cardName = itemview.findViewById(R.id.card_name);
 
+            itemview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    cardImage.setPadding(1,1,1,1);
+                    listener.onCardSelected(card);
+
+                }
+            });
         }
+
     }
 }
