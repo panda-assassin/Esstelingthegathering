@@ -34,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
             throw mSQLException;
         }
 
+
         Button registerButton = findViewById(R.id.RegisterButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,5 +46,13 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+//
+//        Button backToLoginBttn = findViewById(R.id.backToLoginBttn);
+//        backToLoginBttn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+//            }
+//        });
     }
 }

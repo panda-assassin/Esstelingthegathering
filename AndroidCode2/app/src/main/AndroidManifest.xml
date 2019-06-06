@@ -23,6 +23,10 @@
         <activity android:name=".QueueList.CheckInActivity" />
         <activity android:name=".StartUp.HomeScreenActivity" />
         <activity android:name=".Achievement.AchievementActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
