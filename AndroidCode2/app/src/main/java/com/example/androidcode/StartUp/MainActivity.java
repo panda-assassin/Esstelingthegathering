@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         db = new Database(this);
         username = (EditText)findViewById(R.id.loginUsername);
         password = (EditText)findViewById(R.id.loginPassword);
-        loginButton = (Button)findViewById(R.id.logInButton);
+        loginButton = (Button)findViewById(R.id.LoginButton);
         registerButton = (Button)findViewById(R.id.registerButton);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
