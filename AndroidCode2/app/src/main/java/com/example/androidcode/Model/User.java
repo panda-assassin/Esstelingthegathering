@@ -1,4 +1,4 @@
-package com.example.androidcode.DataBase;
+package com.example.androidcode.Model;
 
 public class User {
     private int id;
