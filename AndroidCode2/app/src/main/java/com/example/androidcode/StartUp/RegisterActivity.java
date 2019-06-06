@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.androidcode.DataBase.Database;
-import com.example.androidcode.DataBase.DatabaseHelper;
 import com.example.androidcode.R;
 
 import java.io.IOException;
