@@ -76,26 +76,26 @@
         tools:visibility="visible" />
 
     <TextView
-        android:id="@+id/cardNameTextView"
+        android:id="@+id/selectedCardName"
         android:layout_width="wrap_content"
         android:layout_height="26dp"
         android:layout_marginStart="40dp"
         android:text="Card name"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+        app:layout_constraintTop_toTopOf="@+id/selectedCardImage" />
 
     <TextView
-        android:id="@+id/cardInfoTextview"
+        android:id="@+id/selectedCardDescription"
         android:layout_width="138dp"
         android:layout_height="71dp"
         android:layout_marginTop="20dp"
         android:text="Kort verhaaltje over de Kaart"
-        app:layout_constraintStart_toStartOf="@+id/cardNameTextView"
-        app:layout_constraintTop_toBottomOf="@+id/cardNameTextView" />
+        app:layout_constraintStart_toStartOf="@+id/selectedCardName"
+        app:layout_constraintTop_toBottomOf="@+id/selectedCardName" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/selectedCardImage"
         android:layout_width="134dp"
         android:layout_height="181dp"
         android:layout_marginEnd="36dp"
@@ -107,13 +107,13 @@
         app:srcCompat="@color/colorAccent" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/selectedCardTypeImage"
         android:layout_width="56dp"
         android:layout_height="54dp"
         android:layout_marginTop="148dp"
         android:layout_marginEnd="100dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="@+id/selectedCardImage"
+        app:layout_constraintTop_toTopOf="@+id/selectedCardImage"
         app:srcCompat="@color/colorPrimary" />
 
 </android.support.constraint.ConstraintLayout>

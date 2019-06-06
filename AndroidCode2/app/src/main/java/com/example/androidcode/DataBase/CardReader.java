@@ -39,7 +39,7 @@ public class CardReader {
                     cards.add(new Card(
                             card.getString("Name"),
                             CardType.valueOf(card.getString("CardType")),
-                            card.getString("Description")/* Todo: ,
+                            card.getString("Description"), "Test"/* Todo: ,
                             img */));
 
 
