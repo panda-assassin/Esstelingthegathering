@@ -12,7 +12,7 @@
     <string name="error_message_age">Enter Age</string>
     <string name="error_message_password">Enter Password</string>
     <string name="error_username_exists">Username Already Exists</string>
-    <string name="error_password_match">Password Does Not Matches</string>
+    <string name="error_password_match">Passwords Do Not Match</string>
     <string name="error_valid_username_password">Wrong Username or Password</string>
     <string name="enter_password">Enter Password</string>
     <string name="repeat_password">Repeat Password</string>
