@@ -11,7 +11,7 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 import java.util.ArrayList;
 
-public class DatabaseHelper extends SQLiteAssetHelper {
+public class Database extends SQLiteAssetHelper {
     private static final String DB_NAME = "userdb.db";
     private static final Integer DB_VER = 1;
     private static final String TABLE_NAME = "Registered";
@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteAssetHelper {
     private static final String COLUMN_USER_EMAIL = "Email";
     private static final String COLUMN_USER_PASSWORD = "Password";
 
-    public DatabaseHelper(Context context) {
+    public Database(Context context) {
         super(context, DB_NAME, null, DB_VER);
     }
 
@@ -85,4 +85,3 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         return false;
     }
 }
-
