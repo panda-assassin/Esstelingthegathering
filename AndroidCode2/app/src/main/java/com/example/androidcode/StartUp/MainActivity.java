@@ -43,30 +43,20 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user = username.getText().toString().trim();
-                String pwd = password.getText().toString().trim();
-                if (db.checkUser(user, pwd)) {
-                    Intent loginIntent = new Intent(MainActivity.this, HomeScreenActivity.class);
-                    startActivity(loginIntent);
-                } else {
-                    Toast.makeText(MainActivity.this, R.string.error_valid_username_password, Toast.LENGTH_SHORT).show();
-                }
+                startActivity(new Intent(MainActivity.this, HomeScreenActivity.class));
+
+
+//                String user = username.getText().toString().trim();
+//                String pwd = password.getText().toString().trim();
+//                if (db.checkUser(user, pwd)) {
+//                    Intent loginIntent = new Intent(MainActivity.this, HomeScreenActivity.class);
+//                    startActivity(loginIntent);
+//                } else {
+//                    Toast.makeText(MainActivity.this, R.string.error_valid_username_password, Toast.LENGTH_SHORT).show();
+//                }
             }
         });
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String user = username.getText().toString().trim();
-                String pwd = password.getText().toString().trim();
-                if (db.checkUser(user, pwd)) {
-                    Intent loginIntent = new Intent(MainActivity.this, HomeScreenActivity.class);
-                    startActivity(loginIntent);
-                } else {
-                    Toast.makeText(MainActivity.this, R.string.error_valid_username_password, Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
     }
 }
