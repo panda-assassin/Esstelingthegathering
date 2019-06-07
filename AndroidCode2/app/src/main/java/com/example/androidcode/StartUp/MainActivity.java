@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.androidcode.DataBase.Database;
+import com.example.androidcode.DataBase.DatabaseHelper;
 import com.example.androidcode.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,18 +18,18 @@ public class MainActivity extends AppCompatActivity {
     private EditText password;
     private Button loginButton;
     private Button registerButton;
-    private Database db;
+    private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        db = new Database(this);
-        username = (EditText)findViewById(R.id.loginUsername);
-        password = (EditText)findViewById(R.id.loginPassword);
-        loginButton = (Button)findViewById(R.id.LoginButton);
-        registerButton = (Button)findViewById(R.id.registerButton);
+        db = new DatabaseHelper(this);
+        username = (EditText)findViewById(R.id.LoginUsername);
+        password = (EditText)findViewById(R.id.LoginPassword);
+        loginButton = (Button)findViewById(R.id.LogInButton);
+        registerButton = (Button)findViewById(R.id.RegisterButton);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override

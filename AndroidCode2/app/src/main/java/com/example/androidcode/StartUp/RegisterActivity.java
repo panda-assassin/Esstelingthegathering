@@ -10,13 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.androidcode.DataBase.Database;
+import com.example.androidcode.DataBase.DatabaseHelper;
 import com.example.androidcode.R;
 
 import java.io.IOException;
 
 public class RegisterActivity extends AppCompatActivity {
-    Database db;
+    DatabaseHelper db;
     EditText emailaddress;
     EditText username;
     EditText password;
@@ -28,12 +28,12 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        db = new Database(this);
+        db = new DatabaseHelper(this);
         emailaddress = (EditText) findViewById(R.id.registerEmail);
         username = (EditText) findViewById(R.id.registerUsername);
         password = (EditText) findViewById(R.id.registerPassword);
-        repeatPassword = (EditText) findViewById(R.id.registerRepeatPassword);
-        register = (Button) findViewById(R.id.registerConfirm);
+        repeatPassword = (EditText) findViewById(R.id.repeatRegisteredPassword);
+        register = (Button) findViewById(R.id.registerButton);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

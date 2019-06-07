@@ -1,12 +1,17 @@
 package com.example.androidcode.QueueList;
 
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.androidcode.BlankActivity;
+import com.example.androidcode.QrScanner.QrScannerActivity;
 import com.example.androidcode.R;
 
 public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHolder> {
