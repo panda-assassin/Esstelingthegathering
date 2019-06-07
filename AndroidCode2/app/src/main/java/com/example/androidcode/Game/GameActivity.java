@@ -24,7 +24,6 @@ public class GameActivity extends AppCompatActivity {
     private int comScore = 0;
 
     int counter = 0;
-    boolean runnning = true;
 
     int rockImage = R.drawable.ic_launcher_background;
     int paperImage = R.color.colorAccent;
@@ -95,14 +94,6 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
-        exitBttn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(GameActivity.this, HomeScreenActivity.class));
-                GameActivity.this.finishAfterTransition();
-            }
-        });
-
         cardOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,6 +133,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void checkGameState(ImageButton button, final int i) {
+
         counter++;
         int random = new Random().nextInt(2);
         button.setClickable(false);
@@ -207,7 +199,7 @@ public class GameActivity extends AppCompatActivity {
                 return;
             }
         }
-        matchup[0] = "Nothing happens!";
+        matchup[0] ="It's a draw";
         gameInfoFade.setTexts(matchup);
     }
 
