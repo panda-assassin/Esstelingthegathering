@@ -15,4 +15,18 @@
         <item>The com played...</item>
     </string-array>
 
+    <string-array name="player_wins">
+        <item>YOU WIN!</item>
+    </string-array>
+
+    <string-array name="com_wins">
+        <item>YOU LOSE!</item>
+    </string-array>
+
+    <string-array name="noone_wins">
+        <item>DRAW!</item>
+    </string-array>
+
+
+
 </resources>
