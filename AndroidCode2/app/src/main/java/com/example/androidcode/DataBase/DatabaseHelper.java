@@ -2,123 +2,87 @@ package com.example.androidcode.DataBase;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.SQLException;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
 
-import com.example.androidcode.R;
+import com.example.androidcode.Model.User;
+import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.util.ArrayList;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
-
-
-    private static String DB_NAME = "userdb.db";
-    private static String DB_PATH = "";
-    private static final String id = "ID";
-    private static final String username = "Username";
-    private static final String password = "Password";
-    private static final String email = "Email";
-    private static final int DB_VERSION = 1;
-
-    private SQLiteDatabase DB;
-    private final Context mContext;
-    private boolean mNeedUpdate = false;
+public class DatabaseHelper extends SQLiteAssetHelper {
+    private static final String DB_NAME = "userdb.db";
+    private static final Integer DB_VER = 1;
+    private static final String TABLE_NAME = "Registered";
+    // User Table Columns names
+    private static final String COLUMN_USER_ID = "ID";
+    private static final String COLUMN_USER_NAME = "Username";
+    private static final String COLUMN_USER_EMAIL = "Email";
+    private static final String COLUMN_USER_PASSWORD = "Password";
 
     public DatabaseHelper(Context context) {
-        super(context, DB_NAME, null, DB_VERSION);
-        if (android.os.Build.VERSION.SDK_INT >= 17)
-            DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
-        else
-            DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
-        this.mContext = context;
-
-        copyDataBase();
-
-        this.getReadableDatabase();
+        super(context, DB_NAME, null, DB_VER);
     }
 
-    public void updateDataBase() throws IOException {
-        if (mNeedUpdate) {
-            File dbFile = new File(DB_PATH + DB_NAME);
-            if (dbFile.exists())
-                dbFile.delete();
+    public void addUser(String username, String password, String email) {
+        SQLiteDatabase db = getWritableDatabase();
 
-            copyDataBase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_USER_NAME, username.toLowerCase());
+        values.put(COLUMN_USER_EMAIL, email);
+        values.put(COLUMN_USER_PASSWORD, password);
 
-            mNeedUpdate = false;
+        // Inserting Row
+        db.insert(TABLE_NAME, null, values);
+        db.close();
+    }
+
+    public boolean checkUser(String username) {
+        SQLiteDatabase db = getReadableDatabase();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+
+        String[] sqlSelect = {COLUMN_USER_NAME};
+        qb.setTables(TABLE_NAME);
+        Cursor cursor = qb.query(db,sqlSelect,null,null,null,null,null);
+        ArrayList<String> result = new ArrayList<>();
+        if(cursor.moveToFirst()){
+            do{
+                result.add(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
+            }while(cursor.moveToNext());
         }
-    }
-
-    private boolean checkDataBase() {
-        File dbFile = new File(DB_PATH + DB_NAME);
-        return dbFile.exists();
-    }
-
-    private void copyDataBase() {
-        if (!checkDataBase()) {
-            this.getReadableDatabase();
-            this.close();
-            try {
-                copyDBFile();
-            } catch (IOException mIOException) {
-                throw new Error("ErrorCopyingDataBase");
-            }
-        }
-    }
-
-    private void copyDBFile() throws IOException {
-        //InputStream mInput = mContext.getAssets().open(DB_NAME);
-        InputStream mInput = mContext.getResources().openRawResource(R.raw.userdb);
-        OutputStream mOutput = new FileOutputStream(DB_PATH + DB_NAME);
-        byte[] mBuffer = new byte[1024];
-        int mLength;
-        while ((mLength = mInput.read(mBuffer)) > 0)
-            mOutput.write(mBuffer, 0, mLength);
-        mOutput.flush();
-        mOutput.close();
-        mInput.close();
-    }
-
-    public boolean openDataBase() throws SQLException {
-        DB = SQLiteDatabase.openDatabase(DB_PATH + DB_NAME, null, SQLiteDatabase.CREATE_IF_NECESSARY);
-        return DB != null;
-    }
-
-    public boolean addUser(String username, String password, String email) {
-        ContentValues user = new ContentValues();
-        user.put(this.username, username);
-        user.put(this.password, password);
-        user.put(this.email, email);
-        long result = DB.insert(this.DB_NAME, null, user);
-
-        if (result == -1) {
-            return false;
-        } else {
-
+        if(result.contains(username)){
             return true;
         }
+        return false;
     }
 
-    @Override
-    public synchronized void close() {
-        if (DB != null)
-            DB.close();
-        super.close();
-    }
+    public boolean checkUser(String username, String password) {
+        SQLiteDatabase db = getReadableDatabase();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-    @Override
-    public void onCreate(SQLiteDatabase db) {
+        String[] sqlSelect = {COLUMN_USER_ID,COLUMN_USER_NAME, COLUMN_USER_EMAIL,COLUMN_USER_PASSWORD};
+        qb.setTables(TABLE_NAME);
+        Cursor cursor = qb.query(db, sqlSelect, null, null, null, null, null);
+        ArrayList<User> result = new ArrayList<>();
+        if (cursor.moveToFirst()) {
+            do {
+                User user = new User();
+                user.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_USER_ID)));
+                user.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)).toLowerCase());
+                user.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
+                user.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
 
-    }
+                result.add(user);
+            } while (cursor.moveToNext());
+        }
 
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (newVersion > oldVersion)
-            mNeedUpdate = true;
+        for(User user : result ) {
+            if(user.getName().equals(username) && user.getPassword().equals(password)){
+                return true;
+            }
+        }
+        return false;
     }
 }
+
