@@ -72,9 +72,16 @@ void mqtt_connect() {
 }
 
 void mqtt_pubish(int dataInteger) {
-  String justsomething = dataInteger = "";
-    mqttClient.publish(mqtt_topic, justsomething + "");
-}
+    DynamicJsonDocument jsonDocument(1024);
+
+    JsonObject data = jsonDocument.createNestedObject("data");
+    data["data"] = dataInteger;
+
+    char json[1024];
+    serializeJson(jsonDocument, json);
+    Serial.printf("%s\n", json);
+    mqttClient.publish(mqtt_topic, json);
+  }
 
 void setup() {
   pinMode(GREEN1, OUTPUT);
