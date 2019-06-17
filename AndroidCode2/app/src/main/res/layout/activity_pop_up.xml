@@ -2,39 +2,43 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".Game.PopUpActivity">
 
-    <ImageButton
-        android:id="@+id/rockBttn"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/paperBttn"
-        app:layout_constraintEnd_toStartOf="@+id/paperBttn"
-        app:layout_constraintTop_toTopOf="@+id/paperBttn"
-        app:srcCompat="@drawable/ic_launcher_background" />
-
-    <ImageButton
+    <ImageView
         android:id="@+id/paperBttn"
-        android:layout_width="129dp"
-        android:layout_height="131dp"
+        android:layout_width="123dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/colorAccent" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/papericon" />
 
-    <ImageButton
-        android:id="@+id/scissorsBttn"
-        android:layout_width="127dp"
-        android:layout_height="0dp"
+    <ImageView
+        android:id="@+id/rockBttn"
+        android:layout_width="132dp"
+        android:layout_height="158dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/paperBttn"
+        app:layout_constraintEnd_toStartOf="@+id/scissorsBttn"
         app:layout_constraintStart_toEndOf="@+id/paperBttn"
-        app:layout_constraintTop_toTopOf="@+id/paperBttn"
-        app:srcCompat="@color/colorPrimaryDark" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/rockicon" />
+
+    <ImageView
+        android:id="@+id/scissorsBttn"
+        android:layout_width="0dp"
+        android:layout_height="161dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rockBttn"
+        app:layout_constraintTop_toTopOf="@+id/rockBttn"
+        app:srcCompat="@drawable/scissoricon" />
 
 </android.support.constraint.ConstraintLayout>

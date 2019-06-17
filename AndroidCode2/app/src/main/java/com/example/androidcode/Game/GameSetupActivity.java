@@ -116,8 +116,8 @@ public class GameSetupActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.activity_pop_up);
 
-        ImageButton rock = dialog.findViewById(R.id.rockBttn);
         ImageButton paper = dialog.findViewById(R.id.paperBttn);
+        ImageButton rock = dialog.findViewById(R.id.rockBttn);
         ImageButton scissors = dialog.findViewById(R.id.scissorsBttn);
 
         rock.setEnabled(true);
