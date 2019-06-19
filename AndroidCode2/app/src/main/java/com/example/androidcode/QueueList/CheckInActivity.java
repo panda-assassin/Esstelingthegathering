@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.androidcode.Achievement.Achievement;
+import com.example.androidcode.Achievement.AchievementActivity;
 import com.example.androidcode.BlankActivity;
 import com.example.androidcode.QrScanner.QrScannerActivity;
 import com.example.androidcode.R;
@@ -24,9 +26,12 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.androidcode.Achievement.AchievementActivity;
+
 public class CheckInActivity extends AppCompatActivity {
 
     private static final String TAG = "CheckInActivity";
+    private static final int REQUEST_CODE = 0;
 
     //mqtt attrributes
     private MqttAndroidClient client;
@@ -91,13 +96,27 @@ public class CheckInActivity extends AppCompatActivity {
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CheckInActivity.this, QrScannerActivity.class));
-
-
+                startActivityForResult(new Intent(CheckInActivity.this, QrScannerActivity.class),REQUEST_CODE);
             }
         });
+    }
+
+    protected void onActivityResult(int requestCode, int resultcode, Intent data){
+        if(requestCode == REQUEST_CODE){
+            if(resultcode == RESULT_OK){
+                Log.d("CHECKINACTIVITY", data.getStringExtra("topic"));
 
 
+                String[] dataArray = data.getStringArrayExtra("achievementstags");
+                for (String s : dataArray) {
+
+                }
+                //
+                //Data can be requested here with data.get[type]Extra([variable name])
+                //
+
+            }
+        }
     }
 
     private void subscribe(){
