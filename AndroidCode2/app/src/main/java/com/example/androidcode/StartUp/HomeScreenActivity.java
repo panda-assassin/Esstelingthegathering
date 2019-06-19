@@ -1,13 +1,11 @@
 package com.example.androidcode.StartUp;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.androidcode.Achievement.Achievement;
 import com.example.androidcode.Achievement.AchievementActivity;
 import com.example.androidcode.Game.GameSetupActivity;
 import com.example.androidcode.Inventory.InventoryActivity;
@@ -18,8 +16,11 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
+
+        AchievementActivity.setData();
 
         ImageButton checkin = findViewById(R.id.CheckInActivityBttn);
         ImageButton inventory = findViewById(R.id.InventoryActivityBttn);
