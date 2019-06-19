@@ -1,5 +1,6 @@
 package com.example.androidcode.Achievement;
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,9 +12,14 @@ import android.widget.TextView;
 
 import com.example.androidcode.R;
 
+import java.util.ArrayList;
+
 public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.ImageViewHolder> {
 
-    public AchievementAdapter() {
+    private ArrayList<Achievement> dataset;
+
+    public AchievementAdapter(Context context, ArrayList dataset) {
+        this.dataset = dataset;
     }
 
     @Override
@@ -26,10 +32,10 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
 
     @Override
     public void onBindViewHolder(ImageViewHolder viewHolder, int i) {
-
-        viewHolder.name.setText("naam van achievement");
-        viewHolder.progress.setText("hoeveel van hoeveel");
-        viewHolder.image.setImageResource(R.drawable.ic_launcher_background);
+        final Achievement ac = dataset.get(i);
+        viewHolder.name.setText(ac.getAchievementName());
+        viewHolder.progress.setText(ac.getProgress());
+        viewHolder.image.setImageResource(ac.getImageURL());
     }
 
     @Override

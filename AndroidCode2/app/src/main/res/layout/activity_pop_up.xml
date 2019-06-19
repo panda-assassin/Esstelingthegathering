@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -42,48 +41,4 @@
         app:layout_constraintTop_toTopOf="@+id/rockBttn"
         app:srcCompat="@drawable/scissoricon" />
 
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:context=".Game.PopUpActivity">
-
-    <ImageButton
-        android:id="@+id/rockBttn"
-        android:layout_width="130dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/paperBttn"
-        app:layout_constraintEnd_toStartOf="@+id/paperBttn"
-        app:layout_constraintTop_toTopOf="@+id/paperBttn"
-        app:srcCompat="@drawable/rock" />
-
-    <ImageButton
-        android:id="@+id/paperBttn"
-        android:layout_width="130dp"
-        android:layout_height="131dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/paper" />
-
-    <ImageButton
-        android:id="@+id/scissorsBttn"
-        android:layout_width="130dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/paperBttn"
-        app:layout_constraintStart_toEndOf="@+id/paperBttn"
-        app:layout_constraintTop_toTopOf="@+id/paperBttn"
-        app:srcCompat="@drawable/scissors" />
-
->>>>>>> Development
 </android.support.constraint.ConstraintLayout>
