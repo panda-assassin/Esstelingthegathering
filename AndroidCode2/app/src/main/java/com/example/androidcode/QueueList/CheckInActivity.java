@@ -12,8 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.androidcode.Achievement.Achievement;
-import com.example.androidcode.Achievement.AchievementActivity;
 import com.example.androidcode.BlankActivity;
 import com.example.androidcode.QrScanner.QrScannerActivity;
 import com.example.androidcode.R;
@@ -25,8 +23,6 @@ import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.example.androidcode.Achievement.AchievementActivity;
 
 public class CheckInActivity extends AppCompatActivity {
 
@@ -107,10 +103,16 @@ public class CheckInActivity extends AppCompatActivity {
                 Log.d("CHECKINACTIVITY", data.getStringExtra("topic"));
 
 
-                String[] dataArray = data.getStringArrayExtra("achievementstags");
-                for (String s : dataArray) {
-
-                }
+                // TODO: 6/19/2019 Connect this to other activities like achievements 
+//                String[] dataArray = data.getStringArrayExtra("achievementstags");
+//                for (String s : dataArray) {
+//                    
+//                }
+                
+                
+                
+                
+                
                 //
                 //Data can be requested here with data.get[type]Extra([variable name])
                 //
