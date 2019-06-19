@@ -44,7 +44,8 @@ const int RED2 = 21;
 //data for sending information
 Ticker ticker;
 int highestRead = 0;
-int whythefckyounowork = 0;
+
+
 
 void mqtt_connect() {
   mqttClient.setClient(wifiClient);
@@ -83,7 +84,16 @@ void mqtt_pubish(int dataInteger) {
     mqttClient.publish(mqtt_topic, json);
   }
 
+  void sendData(){
+    mqtt_pubish(highestRead);
+
+    highestRead = 0;
+  }
+
 void setup() {
+
+  ticker.attach(2.0, sendData);
+
   pinMode(GREEN1, OUTPUT);
   pinMode(GREEN2, OUTPUT);
   pinMode(YELLOW1, OUTPUT);
@@ -109,9 +119,9 @@ void loop() {
       }
   }
 
-    int read = analogRead(A0);
+    int read = analogRead(A2);
     //Serial.println(read);
-    read = random(0, 682) * 6;// remove this line
+    //read = random(0, 682) * 6;// remove this line
     if ( read > 682) {
       digitalWrite(GREEN1, HIGH);
       if ( read > 1365) {
@@ -151,12 +161,6 @@ void loop() {
     if (read > highestRead) {
       highestRead = read;
     }
-    if (whythefckyounowork > 50 ) {
-      highestRead = 0;
-    }
 
-
-    mqtt_pubish(160);
-    whythefckyounowork += 1;
-    delay(100);
+    delay(200);
 }
