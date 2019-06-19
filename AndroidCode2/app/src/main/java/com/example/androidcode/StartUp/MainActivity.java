@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.androidcode.AddImage;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button loginButton;
     private Button registerButton;
     private DatabaseHelper db;
+    private ImageView esstelinglogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +29,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         db = new DatabaseHelper(this);
-        username = (EditText)findViewById(R.id.LoginUsername);
-        password = (EditText)findViewById(R.id.LoginPassword);
-        loginButton = (Button)findViewById(R.id.LogInButton);
-        registerButton = (Button)findViewById(R.id.RegisterButton);
+        username = findViewById(R.id.LoginUsername);
+        password = findViewById(R.id.LoginPassword);
+        loginButton = findViewById(R.id.LogInButton);
+        registerButton = findViewById(R.id.RegisterButton);
+        esstelinglogo = findViewById(R.id.esstelingLogo);
+        esstelinglogo.setImageBitmap(db.getImage("Esstelinglogo"));
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override

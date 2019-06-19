@@ -105,7 +105,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/esstelingLogo"
         android:layout_width="303dp"
         android:layout_height="143dp"
         android:layout_marginStart="8dp"
@@ -115,6 +115,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/esstelinglogo" />
+        app:srcCompat="@color/cardview_light_background" />
 
 </android.support.constraint.ConstraintLayout>
