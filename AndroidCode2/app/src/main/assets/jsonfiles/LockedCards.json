@@ -1,0 +1,35 @@
+{
+  "Title":  "Locked Cards Essteling",
+  "Type": "CardSet",
+  "Author": "Mark Baaij",
+  "Version": "1.0",
+  "cards":
+  [
+{
+  "Name":     "Joris",
+  "CardType":     "Rock",
+  "Description": "Een kerel die denkt met alleen een zwaard een draak te kunnen doden. Niet de slimste van de klas",
+  "ImagePath": ""
+},
+
+{
+"Name":     "en de",
+"CardType":     "Paper",
+"Description": "Niet zo zeer een persoon, maar toch wel 2 van de meest gebruikte woorden in  de nederlandse taal"
+},
+
+{
+"Name":     "Draak",
+"CardType":     "Siccors",
+"Description": "Machtig dier die vlammen kan spuwen en schubben sterker dan staal als huid heeft. Word uiteindelijk verslagen door een tiener met een zwaard... hoe dan?!",
+"ImagePath": ""
+},
+
+{
+"Name":     "Lavictus",
+"CardType":     "Joker",
+"Description": "The man, the myth, the legend!!! Ladies and Gentleman, he is here, FROM THE NETHERLANDS, ITS THE ONE AND ONLY MARK BAAIJ!!!!",
+"ImagePath": ""
+}
+    ]
+}

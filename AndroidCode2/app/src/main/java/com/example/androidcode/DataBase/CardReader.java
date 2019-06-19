@@ -38,7 +38,7 @@ public class CardReader {
                     */
                     cards.add(new Card(
                             card.getString("Name"),
-                            CardType.valueOf(card.getString("CardType")),
+                            CardType.valueOf(card.getString("CardType").toUpperCase()),
                             card.getString("Description"), "Test"/* Todo: ,
                             img */));
 

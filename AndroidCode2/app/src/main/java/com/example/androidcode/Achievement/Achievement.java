@@ -1,5 +1,7 @@
 package com.example.androidcode.Achievement;
 
+import com.example.androidcode.Inventory.InventoryActivity;
+
 import java.io.Serializable;
 
 public class Achievement implements Serializable {
@@ -68,6 +70,7 @@ public class Achievement implements Serializable {
             this.progressInt = progressInt;
             if (this.progressInt >= goalInt) {
                 completed = true;
+                InventoryActivity.achievementCompleted();
                 this.progressInt = this.getGoalInt();
             }
             updateProgress();

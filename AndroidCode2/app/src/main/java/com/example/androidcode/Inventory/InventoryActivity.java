@@ -1,6 +1,7 @@
 package com.example.androidcode.Inventory;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,34 +14,86 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.androidcode.BlankActivity;
+import com.example.androidcode.DataBase.CardReader;
 import com.example.androidcode.QueueList.CheckInActivity;
 import com.example.androidcode.R;
 import com.example.androidcode.StartUp.HomeScreenActivity;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class InventoryActivity extends AppCompatActivity implements inventoryListener{
 
     private RecyclerView recyclerView;
-    private InventoryAdapter adapter;
+    private static InventoryAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    private ArrayList<Card> dataSet;
+    private static ArrayList<Card> dataSet = new ArrayList<>();
+    private static ArrayList<Card> lockedDataSet = new ArrayList<>();
 
     private ImageView selectedCardImage;
     private TextView selectedCardName;
     private TextView selectedCardDescription;
     private ImageView selectedCardType;
 
+    private AssetManager assetManager;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
+        assetManager = getAssets();
 
-        this.dataSet = new ArrayList<>();
-        dataSet.add(new Card("Test", CardType.ROCK, "Hoi", "test"));
-        dataSet.add(new Card("Test2", CardType.ROCK, "Hoi", "test"));
-        dataSet.add(new Card("Test3", CardType.ROCK, "Hoi", "test"));
+        InputStream inputStream = null;
+
+
+        try {
+            inputStream = assetManager.open("jsonfiles/Cards.json");
+            String json = null;
+            int size = inputStream.available();
+            byte[] buffer = new byte[size];
+            inputStream.read(buffer);
+            inputStream.close();
+
+            json = new String(buffer, "UTF-8");
+
+            this.dataSet = CardReader.readCardsFromJson(new JSONObject(json));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            inputStream = assetManager.open("jsonfiles/LockedCards.json");
+            String json = null;
+            int size = inputStream.available();
+            byte[] buffer = new byte[size];
+            inputStream.read(buffer);
+            inputStream.close();
+
+            json = new String(buffer, "UTF-8");
+
+            this.lockedDataSet = CardReader.readCardsFromJson(new JSONObject(json));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+//        this.dataSet = new ArrayList<>();
+//        dataSet.add(new Card("Test", CardType.ROCK, "Hoi", "test"));
+//        dataSet.add(new Card("Test2", CardType.ROCK, "Hoi", "test"));
+//        dataSet.add(new Card("Test3", CardType.ROCK, "Hoi", "test"));
 
 
 
@@ -88,4 +141,25 @@ public class InventoryActivity extends AppCompatActivity implements inventoryLis
         selectedCardDescription.setText(card.getDescription());
         selectedCardType.setImageResource(R.drawable.ic_launcher_background);
     }
+
+    public static void achievementCompleted(){
+        int chance = 100;
+
+        Random random = new Random();
+        int n = random.nextInt(100)+1;
+
+        if(n<chance) {
+            if (lockedDataSet.size() > 0) {
+                dataSet.add(lockedDataSet.get(0));
+                lockedDataSet.remove(0);
+                System.out.println("added card");
+                adapter.getItemCount();
+
+            }
+        }
+
+
+    }
+
+
 }

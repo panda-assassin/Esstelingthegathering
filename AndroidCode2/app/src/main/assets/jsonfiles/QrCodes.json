@@ -21,5 +21,14 @@
     "achievementtags":[
       "3 attracties met looping"
     ]
+  },
+
+  "F5gXQF38haz8":{
+    "type": "attraction",
+    "attraction": "Sprookjesbos",
+    "cart": null,
+    "achievementtags":[
+      "bezoek het sprookjesbos"
+    ]
   }
 }
