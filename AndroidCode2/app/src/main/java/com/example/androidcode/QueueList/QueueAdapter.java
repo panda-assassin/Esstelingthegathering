@@ -1,22 +1,24 @@
 package com.example.androidcode.QueueList;
 
-import android.content.Intent;
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.androidcode.BlankActivity;
-import com.example.androidcode.QrScanner.QrScannerActivity;
 import com.example.androidcode.R;
+
+import java.util.ArrayList;
 
 public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHolder> {
 
-    public QueueAdapter() {
+    private ArrayList<Attraction> dataset;
+
+    public QueueAdapter(Context context, ArrayList dataset) {
+        this.dataset = dataset;
     }
 
     @Override
@@ -29,16 +31,17 @@ public class QueueAdapter extends RecyclerView.Adapter<QueueAdapter.ImageViewHol
 
     @Override
     public void onBindViewHolder(ImageViewHolder viewHolder, int i) {
+        final Attraction at = dataset.get(i);
 
-        viewHolder.name.setText("koppeling naar naam");
-        viewHolder.exp.setText("koppeling naar exp");
-        viewHolder.image.setImageResource(R.drawable.ic_launcher_background);
+        viewHolder.name.setText(at.getName());
+        viewHolder.exp.setText(at.getQueue());
+        viewHolder.image.setImageResource(at.getImage());
 
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return dataset.size();
     }
 
     public class ImageViewHolder extends RecyclerView.ViewHolder {

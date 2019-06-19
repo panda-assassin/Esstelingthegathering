@@ -1,23 +1,25 @@
 package com.example.androidcode.QueueList;
 
-public class Attraction {
+import java.io.Serializable;
 
-    private int name;
-    private int queue;
+public class Attraction implements Serializable {
+
+    private String name;
+    private String queue;
     private int image;
 
 
-    public Attraction(int name, int queue, int image) {
+    public Attraction( int image, String name, String queue) {
         this.name = name;
         this.queue = queue;
         this.image = image;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public int getQueue() {
+    public String getQueue() {
         return queue;
     }
 
