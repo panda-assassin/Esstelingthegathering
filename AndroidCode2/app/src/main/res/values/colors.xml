@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#B70000</color>
+    <color name="color1">#B75F1A</color>
+    <color name="color2">#6B23AB</color>
+    <color name="color3">#1C4C04</color>
+    <color name="color4">#156D7F</color>
+    <color name="colorPrimaryDark">#EBEBEB</color>
+    <color name="colorAccent">#F5393F</color>
+    <color name="huts">#72E724</color>
+    <color name="huts2">#246CDF</color>
+    <color name="qrBttnColor">#D3D3D3</color>
+    <color name="recyclercolor">#F3F3F3</color>
+    <color name="color5">#B98C31</color>
+    <color name="tint5">#DFAC44</color>
+    <color name="color1_1">#E86500</color>
+    <color name="color4_1">#10A2BF</color>
+    <color name="color2_1">#A535F0</color>
+    <color name="color3_1">#378B26</color>
+    <color name="color5_1">#FAB831</color>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="game_info_fade">
+        <item>Please select a card.</item>
+    </string-array>
+
+    <string-array name="game_wait_fade">
+        <item>Wait for other player.</item>
+    </string-array>
+
+    <string-array name="com_played_fade">
+        <item>The com played...</item>
+    </string-array>
+
+    <string-array name="player_wins">
+        <item>YOU WIN!</item>
+    </string-array>
+
+    <string-array name="com_wins">
+        <item>YOU LOSE!</item>
+    </string-array>
+
+    <string-array name="noone_wins">
+        <item>DRAW!</item>
+    </string-array>
+
+
+
+</resources>

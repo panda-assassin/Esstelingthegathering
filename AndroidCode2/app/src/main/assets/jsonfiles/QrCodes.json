@@ -1,0 +1,34 @@
+{
+
+  "testcode":{
+    "type": "easteregg",
+    "id": "EivandeDraak",
+    "chance": 50
+  },
+  "wtr3uyMfyrZM": {
+    "type": "attraction",
+    "attraction": "Johan en de Eenhoorn",
+    "achievementtags":[
+      "5x in johan en de eenhoorn"
+    ],
+    "cart": 15
+  },
+
+  "TgkKQTjqF6NF":{
+    "type": "attraction",
+    "attraction": "Boris en de Draak",
+    "cart": 12,
+    "achievementtags":[
+      "3 attracties met looping"
+    ]
+  },
+
+  "F5gXQF38haz8":{
+    "type": "attraction",
+    "attraction": "Sprookjesbos",
+    "cart": null,
+    "achievementtags":[
+      "bezoek het sprookjesbos"
+    ]
+  }
+}
