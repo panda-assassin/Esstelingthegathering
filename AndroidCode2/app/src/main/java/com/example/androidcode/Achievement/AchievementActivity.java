@@ -20,15 +20,17 @@ public class AchievementActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private AchievementAdapter achievementAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private ArrayList<Achievement> achievements;
+    private ArrayList<Achievement> achievements = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_achievements);
 
-        achievements = new ArrayList<>();
-        setData();
+       if(achievements==null) {
+           achievements = new ArrayList<>();
+           setData();
+       }
 
         recyclerView = findViewById(R.id.achievementRecycler);
         layoutManager = new LinearLayoutManager(this);
@@ -55,13 +57,24 @@ public class AchievementActivity extends AppCompatActivity {
         });
     }
 
+    public ArrayList<Achievement> getAchievements() {
+        return achievements;
+    }
+
     public void setData(){
         Log.d("setData", "adding achievements");
-        achievements.add(new Achievement(R.drawable.looping, "3 attracties met looping", "0/3"));
-        achievements.add(new Achievement(R.drawable.johan, "5x in johan en de eenhoorn", "0/5"));
-        achievements.add(new Achievement(R.drawable.sprookjesbos, "bezoek het sprookjesbos", "0/1"));
-        achievements.add(new Achievement(R.drawable.water, "bezoek alle waterattracties", "1/5"));
-        achievements.add(new Achievement(R.drawable.looping, "3 attracties met looping", "1/3"));
-        achievements.add(new Achievement(R.drawable.looping, "3 attracties met looping", "1/3"));
+        achievements.add(new Achievement(R.drawable.looping, "3 attracties met looping", 3));
+        achievements.add(new Achievement(R.drawable.johan, "5x in johan en de eenhoorn", 5));
+        achievements.add(new Achievement(R.drawable.sprookjesbos, "bezoek het sprookjesbos", 1));
+        achievements.add(new Achievement(R.drawable.water, "bezoek alle waterattracties", 5));
+        achievements.add(new Achievement(R.drawable.looping, "3 attracties met looping", 3));
+    }
+
+    public void updateAchievement(String achievement){
+        for (Achievement achievementi : achievements) {
+            if(achievementi.getAchievementName().equalsIgnoreCase(achievement)){
+                achievementi.addProgress(1);
+            }
+        }
     }
 }

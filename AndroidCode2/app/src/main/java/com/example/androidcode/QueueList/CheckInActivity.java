@@ -27,6 +27,7 @@ import org.json.JSONObject;
 public class CheckInActivity extends AppCompatActivity {
 
     private static final String TAG = "CheckInActivity";
+    private static final int REQUEST_CODE = 0;
 
     //mqtt attrributes
     private MqttAndroidClient client;
@@ -91,13 +92,33 @@ public class CheckInActivity extends AppCompatActivity {
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CheckInActivity.this, QrScannerActivity.class));
-
-
+                startActivityForResult(new Intent(CheckInActivity.this, QrScannerActivity.class),REQUEST_CODE);
             }
         });
+    }
+
+    protected void onActivityResult(int requestCode, int resultcode, Intent data){
+        if(requestCode == REQUEST_CODE){
+            if(resultcode == RESULT_OK){
+                Log.d("CHECKINACTIVITY", data.getStringExtra("topic"));
 
 
+                // TODO: 6/19/2019 Connect this to other activities like achievements 
+//                String[] dataArray = data.getStringArrayExtra("achievementstags");
+//                for (String s : dataArray) {
+//                    
+//                }
+                
+                
+                
+                
+                
+                //
+                //Data can be requested here with data.get[type]Extra([variable name])
+                //
+
+            }
+        }
     }
 
     private void subscribe(){
