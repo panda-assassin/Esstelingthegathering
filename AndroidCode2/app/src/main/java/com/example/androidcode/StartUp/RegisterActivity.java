@@ -22,6 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText password;
     EditText repeatPassword;
     Button register;
+    Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,13 @@ public class RegisterActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(RegisterActivity.this, R.string.error_password_match, Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        login = findViewById(R.id.backToLoginBttn);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RegisterActivity.this,MainActivity.class));
             }
         });
 
