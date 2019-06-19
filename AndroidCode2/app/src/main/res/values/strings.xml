@@ -18,6 +18,8 @@
     <string name="repeat_password">Repeat Password</string>
     <string name="enter_username">Enter Username</string>
     <string name="enter_emailadress">Enter emailadress</string>
+    <string name="empty_password">Password can\'t be empty</string>
+    <string name="emtpy_username">Username cant\'t bet emtpy</string>
 </resources>
 
 

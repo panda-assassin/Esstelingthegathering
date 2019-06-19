@@ -44,12 +44,20 @@ public class RegisterActivity extends AppCompatActivity {
                 String repeat_pwd = repeatPassword.getText().toString().trim();
 
                 if (pwd.equals(repeat_pwd)) {
-                    if (!db.checkUser(user)) {
-                        db.addUser(user, pwd, email);
-                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                        startActivity(intent);
+                    if (!pwd.equals("")) {
+                        if (!db.checkUser(user)) {
+                            if (!user.equals("")) {
+                                db.addUser(user, pwd, email);
+                                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(RegisterActivity.this, R.string.emtpy_username, Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(RegisterActivity.this, R.string.error_username_exists, Toast.LENGTH_SHORT).show();
+                        }
                     } else {
-                        Toast.makeText(RegisterActivity.this, R.string.error_username_exists, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, R.string.empty_password, Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(RegisterActivity.this, R.string.error_password_match, Toast.LENGTH_SHORT).show();

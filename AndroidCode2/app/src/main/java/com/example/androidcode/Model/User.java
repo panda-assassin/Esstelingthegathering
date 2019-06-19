@@ -5,6 +5,15 @@ public class User {
     private String name;
     private String email;
     private String password;
+    private double Exp;
+
+    public double getExp() {
+        return Exp;
+    }
+
+    public void setExp(double exp) {
+        Exp = exp;
+    }
 
     public String getName() {
         return name;

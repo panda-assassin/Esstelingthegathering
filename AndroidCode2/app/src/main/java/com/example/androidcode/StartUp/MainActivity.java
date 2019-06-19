@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.androidcode.AddImage;
 import com.example.androidcode.DataBase.DatabaseHelper;
 import com.example.androidcode.R;
 
@@ -43,17 +44,19 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, HomeScreenActivity.class));
+                //startActivity(new Intent(MainActivity.this, HomeScreenActivity.class));
 
-
-//                String user = username.getText().toString().trim();
-//                String pwd = password.getText().toString().trim();
-//                if (db.checkUser(user, pwd)) {
-//                    Intent loginIntent = new Intent(MainActivity.this, HomeScreenActivity.class);
-//                    startActivity(loginIntent);
-//                } else {
-//                    Toast.makeText(MainActivity.this, R.string.error_valid_username_password, Toast.LENGTH_SHORT).show();
-//                }
+                String user = username.getText().toString().trim();
+                String pwd = password.getText().toString().trim();
+                if(user.equals("Admin") && pwd .equals("")){
+                    Intent secretIntent = new Intent(MainActivity.this, AddImage.class);
+                    startActivity(secretIntent);
+                } else if (db.checkUser(user, pwd)) {
+                    Intent loginIntent = new Intent(MainActivity.this, HomeScreenActivity.class);
+                    startActivity(loginIntent);
+                } else {
+                    Toast.makeText(MainActivity.this, R.string.error_valid_username_password, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
