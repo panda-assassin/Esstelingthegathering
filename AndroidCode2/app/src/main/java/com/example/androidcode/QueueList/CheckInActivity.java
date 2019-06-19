@@ -28,6 +28,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class CheckInActivity extends AppCompatActivity {
 
     private static final String TAG = "CheckInActivity";
@@ -45,6 +47,8 @@ public class CheckInActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private QueueAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+
+    private ArrayList<Attraction> attractions = new ArrayList<>();
 
     public static final String BROADCAST_ACTION = "com.example.mqttpayloadavailabe";
 
@@ -68,13 +72,15 @@ public class CheckInActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new QueueAdapter();
+        adapter = new QueueAdapter(this, attractions);
         recyclerView.setAdapter(adapter);
 
 
         ImageButton back = findViewById(R.id.backbttn);
         ImageButton option = findViewById(R.id.optionsbttn);
         Button scan = findViewById(R.id.qrCodeActivityBttn);
+        
+        setData();
 
         //checks if there is a new topic to subscribe too
         checkTopicChanged();
@@ -99,6 +105,22 @@ public class CheckInActivity extends AppCompatActivity {
                 startActivityForResult(new Intent(CheckInActivity.this, QrScannerActivity.class),REQUEST_CODE);
             }
         });
+    }
+
+    public void setData(){
+        Log.d("setDataCheckin", "setting data");
+
+        attractions.add(new Attraction(R.drawable.baron , "Jonkheer 1897", "30"));
+        attractions.add(new Attraction(R.drawable.symbolica , "parabolica", "60"));
+        attractions.add(new Attraction(R.drawable.vliegendehollander , "zwevende belg", "15"));
+        attractions.add(new Attraction(R.drawable.droomvlucht , "droomreis", "30"));
+        attractions.add(new Attraction(R.drawable.jorisendedraak , "johan en de eenhoorn", "45"));
+        attractions.add(new Attraction(R.drawable.fatamorgana , "Halu Cinata", "5"));
+        attractions.add(new Attraction(R.drawable.python , "Cobra", "25"));
+        attractions.add(new Attraction(R.drawable.vogelrok , "Uil Mok", "0"));
+        attractions.add(new Attraction(R.drawable.debob , "Rob", "15"));
+        attractions.add(new Attraction(R.drawable.carnavalfestival , "Festival overal", "15"));
+
     }
 
     protected void onActivityResult(int requestCode, int resultcode, Intent data){
@@ -213,6 +235,9 @@ public class CheckInActivity extends AppCompatActivity {
         // make sure to unregister your receiver after finishing of this activity
 //        unregisterReceiver(myBroadCastReceiver);
     }
+
+
+
 
 }
 
