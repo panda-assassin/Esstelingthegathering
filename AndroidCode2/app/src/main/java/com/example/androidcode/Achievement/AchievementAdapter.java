@@ -36,6 +36,8 @@ public class AchievementAdapter extends RecyclerView.Adapter<AchievementAdapter.
         viewHolder.name.setText(ac.getAchievementName());
         viewHolder.progress.setText(ac.getProgress());
         viewHolder.image.setImageResource(ac.getImageURL());
+        System.out.println(ac.getProgressbarInt());
+        viewHolder.bar.setProgress(ac.getProgressbarInt());
     }
 
     @Override

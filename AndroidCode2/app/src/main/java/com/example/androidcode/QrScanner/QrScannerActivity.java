@@ -16,6 +16,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.TextView;
 
+import com.example.androidcode.Achievement.Achievement;
 import com.example.androidcode.R;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
@@ -27,6 +28,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class QrScannerActivity extends AppCompatActivity {
 
@@ -155,7 +157,7 @@ public class QrScannerActivity extends AppCompatActivity {
             public void executeCode(JSONObject object, Intent intent) throws JSONException {
                 if(object.getString("type").equals("attraction")){
                     System.out.println("Attraction: " + object.getString("attraction"));
-                    intent.putExtra("topic", "testTopic");
+                    intent.putExtra("object", object.toString());
                     setResult(RESULT_OK, intent);
                     finish();
                 }

@@ -10,6 +10,7 @@ public class Achievement implements Serializable {
     private int progressInt;
     private int goalInt;
     boolean completed;
+    private int progressbarInt;
 
     public Achievement(int imageURL, String achievementName, int goalInt) {
         this.imageURL = imageURL;
@@ -18,6 +19,7 @@ public class Achievement implements Serializable {
         this.progressInt = 0;
         this.progress = new String(progressInt+"/"+goalInt);
         this.completed = false;
+        this.progressbarInt = 0;
     }
 
     public int getImageURL() {
@@ -53,6 +55,14 @@ public class Achievement implements Serializable {
 
     }
 
+    public int getProgressbarInt() {
+        return progressbarInt;
+    }
+
+    private void setProgressbarInt(int progressbarInt) {
+        this.progressbarInt = progressbarInt;
+    }
+
     public void setProgressInt(int progressInt) {
         if(!completed) {
             this.progressInt = progressInt;
@@ -61,6 +71,8 @@ public class Achievement implements Serializable {
                 this.progressInt = this.getGoalInt();
             }
             updateProgress();
+            System.out.println("getprogressint:" + getProgressInt() + " *100 / getGoalint:"+getGoalInt()+"*100 = " + ((getProgressInt()*100)/(getGoalInt()*100)) );
+            setProgressbarInt((getProgressInt()*100)/(getGoalInt() ));
         }
     }
 

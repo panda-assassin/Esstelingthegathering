@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.JsonReader;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.androidcode.Achievement.Achievement;
+import com.example.androidcode.Achievement.AchievementActivity;
 import com.example.androidcode.BlankActivity;
 import com.example.androidcode.QrScanner.QrScannerActivity;
 import com.example.androidcode.R;
@@ -21,6 +24,7 @@ import com.example.androidcode.mqtt.PahoMqttClient;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -100,17 +104,28 @@ public class CheckInActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultcode, Intent data){
         if(requestCode == REQUEST_CODE){
             if(resultcode == RESULT_OK){
-                Log.d("CHECKINACTIVITY", data.getStringExtra("topic"));
+
+                try {
+                    JSONObject object = new JSONObject(data.getStringExtra("object"));
 
 
-                // TODO: 6/19/2019 Connect this to other activities like achievements 
-//                String[] dataArray = data.getStringArrayExtra("achievementstags");
-//                for (String s : dataArray) {
-//                    
-//                }
-                
-                
-                
+
+                if(object.getString("type").equalsIgnoreCase("attraction")) {
+
+
+                    JSONArray achievements = object.getJSONArray("achievementtags");
+                    for (int i = 0; i < achievements.length(); i++) {
+                        try {
+                            AchievementActivity.updateAchievement(achievements.getString(i));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 
                 
                 //
@@ -196,7 +211,7 @@ public class CheckInActivity extends AppCompatActivity {
         super.onDestroy();
 
         // make sure to unregister your receiver after finishing of this activity
-        unregisterReceiver(myBroadCastReceiver);
+//        unregisterReceiver(myBroadCastReceiver);
     }
 
 }

@@ -71,9 +71,16 @@ public class AchievementActivity extends AppCompatActivity {
     }
 
     public static void updateAchievement(String achievement){
+
+        if(achievement==null){
+            achievements = new ArrayList<>();
+            setData();
+        }
+
         for (Achievement achievementi : achievements) {
             if(achievementi.getAchievementName().equalsIgnoreCase(achievement)){
                 achievementi.addProgress(1);
+                System.out.println(achievementi.getAchievementName()+": "+achievementi.getProgress());
             }
         }
     }
