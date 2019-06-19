@@ -56,7 +56,7 @@ public class CheckInActivity extends AppCompatActivity {
                 getApplicationContext(),
                 mqttc.MQTT_BROKER_URL(),
                 mqttc.CLIENT_ID());
-
+        myBroadCastReceiver = new MyBroadcastReceiver();
         //When checking in
 
         recyclerView = findViewById(R.id.queue_recycler);
