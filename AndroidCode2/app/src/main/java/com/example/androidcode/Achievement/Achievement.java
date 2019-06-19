@@ -74,7 +74,6 @@ public class Achievement implements Serializable {
                 this.progressInt = this.getGoalInt();
             }
             updateProgress();
-            System.out.println("getprogressint:" + getProgressInt() + " *100 / getGoalint:"+getGoalInt()+"*100 = " + ((getProgressInt()*100)/(getGoalInt()*100)) );
             setProgressbarInt((getProgressInt()*100)/(getGoalInt() ));
         }
     }

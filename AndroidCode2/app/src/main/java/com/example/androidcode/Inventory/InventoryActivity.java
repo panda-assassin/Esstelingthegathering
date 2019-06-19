@@ -153,7 +153,7 @@ public class InventoryActivity extends AppCompatActivity implements inventoryLis
                 dataSet.add(lockedDataSet.get(0));
                 lockedDataSet.remove(0);
                 System.out.println("added card");
-                adapter.getItemCount();
+                adapter.notifyDataSetChanged();
 
             }
         }
