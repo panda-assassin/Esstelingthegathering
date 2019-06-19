@@ -3,8 +3,6 @@
 
     <string-array name="game_info_fade">
         <item>Please select a card.</item>
-        <item>Wait for other player.</item>
-        <item>The com played....</item>
     </string-array>
 
     <string-array name="game_wait_fade">

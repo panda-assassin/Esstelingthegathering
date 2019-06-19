@@ -30,6 +30,9 @@ dependencies {
 
     implementation 'com.tomer:fadingtextview:2.5'
 
+    implementation files('libs/org.eclipse.paho.android.service-1.1.1.jar')
+    implementation files('libs/org.eclipse.paho.client.mqttv3-1.1.1.jar')
+
     implementation 'de.hdodenhof:circleimageview:2.1.0'
 
     implementation 'com.google.android.gms:play-services-vision:17.0.2'

@@ -16,7 +16,6 @@
             android:layout_width="392dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            app:cardBackgroundColor="@color/recyclercolor"
             app:cardCornerRadius="3dp"
             app:cardElevation="3dp"
             app:cardPreventCornerOverlap="true"
@@ -35,7 +34,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="10dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@android:color/secondary_text_light_nodisable" />
 
             <TextView
                 android:id="@+id/queueExp"
@@ -43,7 +43,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="30dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@android:color/secondary_text_light_nodisable" />
 
         </android.support.v7.widget.CardView>
     </LinearLayout>
