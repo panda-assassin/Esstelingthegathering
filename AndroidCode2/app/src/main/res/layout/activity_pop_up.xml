@@ -6,39 +6,34 @@
     android:layout_height="wrap_content"
     tools:context=".Game.PopUpActivity">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/paperBttn"
-        android:layout_width="123dp"
-        android:layout_height="160dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/scissorsBttn"
+        app:layout_constraintStart_toEndOf="@+id/rockBttn"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/papericon" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/rockBttn"
-        android:layout_width="132dp"
-        android:layout_height="158dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/paperBttn"
-        app:layout_constraintEnd_toStartOf="@+id/scissorsBttn"
-        app:layout_constraintStart_toEndOf="@+id/paperBttn"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/rockicon" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/scissorsBttn"
-        android:layout_width="0dp"
-        android:layout_height="161dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rockBttn"
-        app:layout_constraintTop_toTopOf="@+id/rockBttn"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/scissoricon" />
 
 </android.support.constraint.ConstraintLayout>

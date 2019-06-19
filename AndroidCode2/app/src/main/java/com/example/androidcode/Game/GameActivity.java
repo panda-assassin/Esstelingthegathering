@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.androidcode.Achievement.Achievement;
 import com.example.androidcode.R;
 import com.example.androidcode.StartUp.HomeScreenActivity;
 import com.tomer.fadingtextview.FadingTextView;
@@ -26,9 +27,9 @@ public class GameActivity extends AppCompatActivity
 
     int counter = 0;
 
-    int rockImage = R.drawable.rock;
-    int paperImage = R.drawable.paper;
-    int scissorImage = R.drawable.scissors;
+    int rockImage = R.drawable.rockicon;
+    int paperImage = R.drawable.papericon;
+    int scissorImage = R.drawable.scissoricon;
 
     TextView scoreboard;
 

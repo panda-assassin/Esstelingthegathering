@@ -29,9 +29,9 @@ public class GameSetupActivity extends AppCompatActivity
     private ImageButton card4;
     private ImageButton card5;
 
-    int rockImage = R.drawable.rock;
-    int paperImage = R.drawable.paper;
-    int scissorImage = R.drawable.scissors;
+    int rockImage = R.drawable.rockicon;
+    int paperImage = R.drawable.papericon;
+    int scissorImage = R.drawable.scissoricon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
